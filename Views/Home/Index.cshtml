@@ -1,0 +1,101 @@
+﻿@{
+    Layout = null;
+}
+
+<html ng-app="CarDealershipApplication">
+<head>
+    <title>Parker's Car Dealership</title>
+    <base href="/" />
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .container {
+            border: 2px solid black;
+            background-color: grey;
+            position: relative;
+        }
+
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+
+        .navbar {
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">Parker's Car Dealership</a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" />
+                            </div> <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right">
+
+
+                            <li><div>@Html.Partial("_LoginPartial")</div></li>
+
+                        </ul>
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+
+        <ng-view></ng-view>
+
+    </div>
+
+    @*<div class="row clearfix">
+
+        <label>Search Cars:</label>
+        <input ng-model="vm-search" ng-change="vm.fetch()" ng-model-options="{debounce:500}" type="text" />
+
+        <div class="btn-group" dropdown is-open="status.isopen" ng-controller="DropdownCtrl as vm">
+            <button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+                Search by model: <span class="caret"></span>
+            </button>
+
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Rolls-Royce</a></li>
+                <li><a href="#">Tesla</a></li>*@
+    <!--WHY IS MY DROPDOWN LIST NOT WORKING AND HOW DO I CONNECT IT TO SEARCH??-->
+    @*</ul>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 column">
+            </div>
+
+            <div class="col-md-4 column">
+            </div>
+
+        </div>*@
+
+
+    <hr />
+    &copy; 2015 by the only person here whose last name would actually go well with a car dealership.
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-resource.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/Scripts/dirPagination.js"></script>
+
+    <script src="~/Scripts/CarsApp/app.js"></script>
+    <script src="~/Scripts/CarsApp/controller.js"></script>
+</body>
+</html>

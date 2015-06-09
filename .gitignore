@@ -1,0 +1,5 @@
+bin/
+obj/
+Properties/
+CarDealershipApplication.csproj
+CarDealershipApplication.csproj.user

@@ -1,0 +1,79 @@
+﻿<div>
+    <a href="/dealerView">Add Car</a>
+</div>
+<div ng-controller="SearchController as vm">
+    <form ng-submit="vm.add()">
+        <div>
+            <label>Car Title: </label><input type="text" ng-model="vm.newCar.title" />
+        </div>
+        <div>
+            <label>Car Price: </label><input type="number" ng-model="vm.newCar.price" />
+        </div>
+        <div>
+            <label>Car Image: </label><input type="text" ng-model="vm.newCar.picture" />
+        </div>
+        <div>
+            <label>Brief Description: </label><input type="text" ng-model="vm.newCar.briefDescription" />
+        </div>
+        <div>
+            <label>Full Description: </label><input type="text" ng-model="vm.newCar.fullDescription" />
+        </div>
+        <div>
+            <label>Model: </label><input type="text" ng-model="vm.newCar.type" />
+        </div>
+        <div>
+            <select>
+                <option>Rolls-Royce</option>
+                <option>Tesla</option>
+            </select>
+        </div>
+        <div>
+            <label>Gas Mileage: </label><input type="number" ng-model="vm.newCar.gasMileage" />
+        </div>
+        <div>
+            <label>Range: </label><input type="number" ng-model="vm.newCar.range" />
+        </div>
+        <div>
+            <label>Charge Time: </label><input type="number" ng-model="vm.newCar.chargeTime" />
+        </div>
+        <input type="submit" value="Add Car" />
+    </form>
+</div>
+
+
+<div ng-controller="SearchController as vm" style="width: 400px; border:solid 2px grey; padding:25px;">
+
+    <table ng-cloak>
+        <tr ng-repeat="car in vm.cars" style="margin-bottom:10px;">
+            <td style="padding:8px; border:2px solid grey; background-color:lightgrey">
+                {{car.Title}}: ${{car.Price}}
+                <br />
+                <em>{{car.BriefDescription}}</em>
+                <br />
+                <a href="#" ng-click="vm.remove(car)">Remove Car</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!--<div ng-controller="ModalCtrl">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">{{car.Title}}: ${{car.Price}}</h3>
+        </div>
+        <div class="modal-body">
+            <img src="{{car.Image}}" /> <br />
+            <p><em>{{car.FullDescription}}</em></p>
+
+            Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+    <button class="btn btn-default" ng-click="open()">Open me!</button>
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+</div>-->
+
+

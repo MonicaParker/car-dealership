@@ -1,0 +1,50 @@
+﻿<div>
+    <a href="/dealerView">Add Car</a>
+</div>
+
+<div ng-controller="SearchController as vm" style="width: 400px; border:solid 2px grey; padding:25px;">
+    <p>Have a particular model in mind? Check out our available models!</p>
+
+    <button class="btn btn-default" ng-click="vm.getRolls()">Rolls-Royce</button>
+
+    <button class="btn btn-default" ng-click="vm.getTesla()">Tesla</button>
+    <br /><br />
+    <input ng-model="vm.search" ng-change="vm.fetch()" ng-click="vm.refresh()" ng-model-options="{debounce:500}" type="text" />
+    <hr />
+
+    <div>
+        <table ng-cloak>
+            <tr dir-paginate="car in vm.cars | itemsPerPage: 4" style=" margin-bottom:10px;">
+                <td style="padding:8px; border:2px solid grey; background-color:lightgrey">
+                    {{car.Title}}: ${{car.Price}}
+                    <br />
+                    <em>{{car.BriefDescription}}</em>
+                </td>
+            </tr>
+        </table>
+        <dir-pagination-controls template-url="dirPagination.tpl.html"></dir-pagination-controls>
+
+    </div>
+
+</div>
+
+<!--<div ng-controller="ModalCtrl">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">{{car.Title}}: ${{car.Price}}</h3>
+        </div>
+        <div class="modal-body">
+            <img src="{{car.Image}}" /> <br />
+            <p><em>{{car.FullDescription}}</em></p>
+
+            Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+    <button class="btn btn-default" ng-click="open()">Open me!</button>
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+</div>-->
+
